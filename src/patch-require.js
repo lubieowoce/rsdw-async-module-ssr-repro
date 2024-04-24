@@ -33,9 +33,6 @@ Module["_load"] = function (request, context) {
   let resolvedRequest = request;
   // enhanced-resolve doesn't like resolving imports of node builtins, so skip them.
   if (!isBuiltinModule(request)) {
-    if (!context) {
-      console.log(arguments);
-    }
     const resolver = isReactServer ? resolverServer : resolverClient;
     resolvedRequest = resolver({}, context?.path ?? "/", request);
   }
