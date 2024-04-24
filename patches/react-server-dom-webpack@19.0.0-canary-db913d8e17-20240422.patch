@@ -1,0 +1,13 @@
+diff --git a/cjs/react-server-dom-webpack-client.node.development.js b/cjs/react-server-dom-webpack-client.node.development.js
+index f5b0a6c5944ed740af1c90738a65a23bb925b315..47083e74fee69a7cf58ec55b20c3b3c0a2d469fe 100644
+--- a/cjs/react-server-dom-webpack-client.node.development.js
++++ b/cjs/react-server-dom-webpack-client.node.development.js
+@@ -121,7 +121,7 @@ function resolveClientReference(bundlerConfig, metadata) {
+       name = metadata[NAME];
+     }
+ 
+-    if (isAsyncImport(metadata)) {
++    if (resolvedModuleData.async && !process.env.DISABLE_ASYNC_PATCH) {
+       return [resolvedModuleData.id, resolvedModuleData.chunks, name, 1
+       /* async */
+       ];

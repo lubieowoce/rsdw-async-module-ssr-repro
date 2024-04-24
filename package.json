@@ -1,0 +1,29 @@
+{
+  "name": "rsdw-async-module-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node ./src/main.js",
+    "start-no-patch": "DISABLE_ASYNC_PATCH=1 node ./src/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "enhanced-resolve": "^5.16.0",
+    "is-builtin-module": "^3.2.1",
+    "react": "19.0.0-canary-db913d8e17-20240422",
+    "react-dom": "19.0.0-canary-db913d8e17-20240422",
+    "react-server-dom-webpack": "19.0.0-canary-db913d8e17-20240422"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "react-server-dom-webpack@19.0.0-canary-db913d8e17-20240422": "patches/react-server-dom-webpack@19.0.0-canary-db913d8e17-20240422.patch"
+    }
+  }
+}
